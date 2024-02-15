@@ -40,15 +40,16 @@
             </div>
           </div>
           <div class="col-12 col-md-7 mt-5 text-center">
-            <h3 class="text-white mb-3">Login / SignUp</h3>
+            <h3 class="text-white mb-3 " id="signupbt">SignUp/</h3>
+            <h3 class="text-white mb-3 " id="loginbt">Login</h3>
 
-            <div class="login-card bg-whit mt-1 d-non">
+            <div class="login-card bg-whit mt-2 " id="logindiv">
               <form action="" target="_self" class="">
                 <label for="Email" class="email mb-1">Email</label><br />
                 <input
                   type="email"
                   name="email"
-                  id="email"
+                   
                   required
                   placeholder="Enter Your Email"
                   class="form-cont text-dark"
@@ -58,7 +59,7 @@
                 <input
                   type="password"
                   name="password"
-                  id="pass"
+                  
                   required
                   placeholder="Enter Your password"
                   minlength="6"
@@ -78,22 +79,28 @@
               </form>
             </div>
 <!-- signup code goes here  -->
-            <div class="signup-card d-none" id="signup">
-              <form action="" id="">
+            <div class="signup-card " id="signupdiv">
+              <form action="" id="formid">
+               <div class="image-card"> 
                 <img src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg" id="image-file" class="profile-img mb-2 mt-2">
-                <label for="file" class="text-white d-inline" > <span class="material-symbols-outlined camera">
-                    photo_camera
-                    </span></label>
+                <label for="file" class="text-white " > <span class="material-symbols-outlined camera">
+                  photo_camera
+                  </span></label>
+              </div>
+               
                 <input type="file" id="file" name="file" accept="image/*" onchange="change()" class="d-none">
                 <h5 class="text-white">Set Your Profile photo</h5><hr class="text-white">
                 <label for="name" class="text-white signup-texts">Name</label><br>
-                <input type="text" placeholder="Enter Your Name" name="text" id="name" class="signup-form"><br>
-                <label for="name" class="text-white signup-texts">Name</label><br>
-                <input type="text" placeholder="Enter Your Name" name="text" id="name" class="signup-form"><br>
-                <label for="name" class="text-white signup-texts">Name</label><br>
-                <input type="text" placeholder="Enter Your Name" name="text" id="name" class="signup-form"><br>
-                
-
+                <input type="text" placeholder="Enter Your Name" name="text" id="username" class="signup-form mb-3" required><br>
+                <label for="email"  class="text-white signup-texts">Email</label><br>
+                <input type="email" required placeholder="Enter Your Email" name="text" id="email" class="signup-form mb-3"><br>
+                <label for="password" class="text-white signup-texts">Password</label><br>
+                <input type="password" required maxlength="6" minlength="6" placeholder="Enter Your Password" name="password" id="signup-pass" class="signup-form"><br>
+                <input type="submit" name="submit" value="Submit" class="submit-bt mt-4">
+                <hr class="text-white" />
+                <h4 class="check-txt text-primary mt-3">
+                   If You Already Have An Account Click on Login
+                </h4>
 
               
             </form>

@@ -42,7 +42,7 @@
 }
 .bg-image-card {
   background-image: url(" https://images.pexels.com/photos/1276518/pexels-photo-1276518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  height: 100vh;
+  height: 130vh;
   width: 100vw;
   background-size: cover;
 }
@@ -89,6 +89,17 @@
   border-radius: 20px;
 }
 
+#loginbt{
+  display: inline-block;
+  cursor: pointer;
+
+}
+
+#signupbt{
+  display: inline-block;
+  cursor:pointer;
+}
+
 @media only screen and (min-width: 760px) {
   .best-head-card {
     display: flex;
@@ -129,4 +140,20 @@
   height: 35px;
   border-radius: 20px;
   padding-left: 14px;
+}
+
+.camera{
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#logindiv{
+  display: none;
+}
+
+.image-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
