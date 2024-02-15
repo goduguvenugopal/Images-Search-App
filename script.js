@@ -6,10 +6,14 @@ const signupFunc = document.getElementById("signupdiv");
 loginBt.addEventListener("click", function () {
   loginFunc.style.display = "block";
   signupFunc.style.display = "none";
+  loginBt.style.color = "blue";
+  signupBt.style.color = "";
 });
 signupBt.addEventListener("click", () => {
   loginFunc.style.display = "none";
   signupFunc.style.display = "block";
+  signupBt.style.color = "blue";
+  loginBt.style.color = "";
 });
 
 // photo preview code

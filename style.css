@@ -77,6 +77,9 @@
   color: white;
 }
 
+.submit-bt:hover{
+  background-color: rgb(224, 33, 231);
+}
 .submit-bt {
   font-size: 17px;
 
@@ -89,15 +92,17 @@
   border-radius: 20px;
 }
 
-#loginbt{
+#loginbt {
   display: inline-block;
+  margin-right: 15px;
   cursor: pointer;
-
+  color: white;
 }
 
-#signupbt{
+#signupbt {
   display: inline-block;
-  cursor:pointer;
+  cursor: pointer;
+  color: white;
 }
 
 @media only screen and (min-width: 760px) {
@@ -112,22 +117,19 @@
   }
 }
 
-
 /* signup styling starts here  */
-.signup-card{
+.signup-card {
   padding: 10px;
   border: 1px solid white;
   border-radius: 20px;
   box-shadow: 0px 0px 8px white;
 }
 
-.profile-img{
+.profile-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-
 }
-
 
 .signup-texts {
   font-size: 19px;
@@ -142,18 +144,27 @@
   padding-left: 14px;
 }
 
-.camera{
+.camera {
   cursor: pointer;
   margin-left: 5px;
 }
 
-#logindiv{
+#signupdiv {
   display: none;
 }
 
-.image-card{
+#signupdiv:hover {
+  box-shadow: 0px 0px 8px rgb(231, 47, 227);
+  border: 1px solid rgb(236, 46, 179);
+}
+
+#logindiv:hover {
+  box-shadow: 0px 0px 8px rgb(231, 47, 227);
+  border: 1px solid rgb(236, 46, 179);
+}
+
+.image-card {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }

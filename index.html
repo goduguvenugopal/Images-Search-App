@@ -12,9 +12,11 @@
     />
     <link rel="shortcut icon" href="vk-logo.png" type="image/x-icon" />
     <title>Images Search App</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
   <body>
     <!-- navsection code  -->
     <div class="nav-card" id="demo">
@@ -40,16 +42,16 @@
             </div>
           </div>
           <div class="col-12 col-md-7 mt-5 text-center">
-            <h3 class="text-white mb-3 " id="signupbt">SignUp/</h3>
-            <h3 class="text-white mb-3 " id="loginbt">Login</h3>
+            <h3 class="text-whit mb-3" id="loginbt">Login</h3>
 
-            <div class="login-card bg-whit mt-2 " id="logindiv">
+            <h3 class="text-whit mb-3" id="signupbt">SignUp</h3>
+
+            <div class="login-card bg-whit mt-2" id="logindiv">
               <form action="index1.html" target="_self" class="">
                 <label for="Email" class="email mb-1">Email</label><br />
                 <input
                   type="email"
                   name="email"
-                   
                   required
                   placeholder="Enter Your Email"
                   class="form-cont text-dark"
@@ -59,7 +61,6 @@
                 <input
                   type="password"
                   name="password"
-                  
                   required
                   placeholder="Enter Your password"
                   minlength="6"
@@ -78,32 +79,78 @@
                 </h4>
               </form>
             </div>
-<!-- signup code goes here  -->
-            <div class="signup-card " id="signupdiv">
+            <!-- signup code goes here  -->
+            <div class="signup-card mt-2" id="signupdiv">
               <form action="" id="formid">
-               <div class="image-card"> 
-                <img src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg" id="image-file" class="profile-img mb-2 mt-2">
-                <label for="file" class="text-white " > <span class="material-symbols-outlined camera">
-                  photo_camera
-                  </span></label>
-              </div>
-               
-                <input type="file" id="file" name="file" accept="image/*" onchange="change()" class="d-none">
-                <h5 class="text-white">Set Your Profile photo</h5><hr class="text-white">
-                <label for="name" class="text-white signup-texts">Name</label><br>
-                <input type="text" placeholder="Enter Your Name" name="text" id="username" class="signup-form mb-3" required><br>
-                <label for="email"  class="text-white signup-texts">Email</label><br>
-                <input type="email" required placeholder="Enter Your Email" name="text" id="email" class="signup-form mb-3"><br>
-                <label for="password" class="text-white signup-texts">Password</label><br>
-                <input type="password" required maxlength="6" minlength="6" placeholder="Enter Your Password" name="password" id="signup-pass" class="signup-form"><br>
-                <input type="submit" name="submit" value="Submit" class="submit-bt mt-4">
+                <div class="image-card">
+                  <img
+                    src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg"
+                    id="image-file"
+                    class="profile-img mb-2 mt-2"
+                  />
+                  <label for="file" class="text-white">
+                    <span class="material-symbols-outlined camera">
+                      photo_camera
+                    </span></label
+                  >
+                </div>
+
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  accept="image/*"
+                  onchange="change()"
+                  class="d-none"
+                />
+                <h5 class="text-white">Set Your Profile photo</h5>
+                <hr class="text-white" />
+                <label for="name" class="text-white signup-texts mb-1"
+                  >Name</label
+                ><br />
+                <input
+                  type="text"
+                  placeholder="Enter Your Name"
+                  name="text"
+                  id="username"
+                  class="signup-form mb-3"
+                  required
+                /><br />
+                <label for="email" class="text-white signup-texts mb-1"
+                  >Email</label
+                ><br />
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter Your Email"
+                  name="text"
+                  id="email"
+                  class="signup-form mb-3"
+                /><br />
+                <label for="password" class="text-white signup-texts mb-1"
+                  >Password</label
+                ><br />
+                <input
+                  type="password"
+                  required
+                  maxlength="6"
+                  minlength="6"
+                  placeholder="Enter Your Password"
+                  name="password"
+                  id="signup-pass"
+                  class="signup-form"
+                /><br />
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Submit"
+                  class="submit-bt mt-4"
+                />
                 <hr class="text-white" />
                 <h4 class="check-txt text-primary mt-3">
-                   If You Already Have An Account Click on Login
+                  If You Already Have An Account Click on Login
                 </h4>
-
-              
-            </form>
+              </form>
             </div>
           </div>
         </div>
