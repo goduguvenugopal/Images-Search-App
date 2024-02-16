@@ -8,12 +8,14 @@ loginBt.addEventListener("click", function () {
   signupFunc.style.display = "none";
   loginBt.style.color = "blue";
   signupBt.style.color = "";
+  mainPage.style.display = "none";
 });
 signupBt.addEventListener("click", () => {
   loginFunc.style.display = "none";
   signupFunc.style.display = "block";
   signupBt.style.color = "blue";
   loginBt.style.color = "";
+  mainPage.style.display = "none";
 });
 
 // photo preview code
@@ -44,25 +46,28 @@ function change() {
 // signup form code
 
 const formFunc = document.getElementById("signupform");
-const emailText = document.getElementById("email");
-const passWord = document.getElementById("signup-pass");
+
 const userName = document.getElementById("username");
 const outName = document.getElementById("navbar-name");
-const outEmail = document.getElementById("outemail");
-const outPassword = document.getElementById("outpassword");
 
 formFunc.addEventListener("submit", function (x) {
   x.preventDefault();
 
-  const storeEmail = emailText.value;
-  outEmail.textContent = storeEmail;
+  const storeName = userName.value;
+  outName.textContent = `Hi,${storeName}`;
+  alert("Your Account Has Been Created , Now Login The Website ");
 });
 
+// login code
+
+const emailText = document.getElementById("email");
+const passWord = document.getElementById("signup-pass");
 const logPage = document.getElementById("log-in-page");
 const formLog = document.getElementById("loginform");
 const logEmail = document.getElementById("login-email");
 const logPass = document.getElementById("login-pass");
 const mainPage = document.getElementById("mainpage");
+const logoutDiv = document.getElementById("log-pro-cont");
 
 formLog.addEventListener("submit", function (l) {
   l.preventDefault();
@@ -84,4 +89,18 @@ formLog.addEventListener("submit", function (l) {
 function openMain() {
   logPage.style.display = "none";
   mainPage.style.display = "block";
+  logoutDiv.style.display = "block";
+}
+
+// logout function
+
+const logoutFunc = document
+  .getElementById("log-out-bt")
+  .addEventListener("click", () => {
+    setTimeout(openlog, 1000);
+  });
+function openlog() {
+  logPage.style.display = "block";
+  mainPage.style.display = "block";
+  logoutDiv.style.display = "none";
 }

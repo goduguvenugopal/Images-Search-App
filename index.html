@@ -19,22 +19,32 @@
   </head>
   <body>
     <!-- navsection code  -->
-    <div class="nav-card" id="demo">
-      <div class="container d-flex justify-content-between align-items-center py-2">
+    <div class="nav-card fixed-top" id="demo">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center py-2"
+      >
         <div class="logo-card">
           <img src="vk-logo.png" class="logo" />
-          <h5 class="text-dark mt-2 images">Images</h5>
+          <h5 class="text-dark images">Images</h5>
         </div>
-        <div class="d-flex" id="">
-          <h5 class="text-dark mt-2 images ">Log Out</h5>
-          <h5 class="text-dark  " id="navbar-name">venu gopal</h5>
+        <div class=" " id="log-pro-cont">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mt-2" id="log-out-bt">Log Out</h5>
+            <h5 class="text-dark" id="navbar-name">venu gopal</h5>
+
+            <img
+              src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg"
+              id="image-file"
+              class="profile-img"
+            />
+          </div>
         </div>
       </div>
     </div>
 
     <!-- login and signup section code  -->
 
-    <div class="bg-image-card" id="log-in-page">
+    <div class="bg-image-card pt-5 d-non" id="log-in-page">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-5">
@@ -49,13 +59,12 @@
             <h3 class="text-whit mb-3" id="loginbt">Login</h3>
 
             <h3 class="text-whit mb-3" id="signupbt">SignUp</h3>
-           <!-- login form code starts here  -->
+            <!-- login form code starts here  -->
             <div class="login-card bg-whit mt-2" id="logindiv">
-              
               <form action="" id="loginform" target="_self" class="">
                 <label for="Email" class="email mb-1">Email</label><br />
                 <input
-                id="login-email"
+                  id="login-email"
                   type="email"
                   name="email"
                   required
@@ -88,11 +97,11 @@
             </div>
             <!-- signup code goes here  -->
             <div class="signup-card mt-2" id="signupdiv">
-              <form  id="signupform">
+              <form id="signupform">
                 <div class="image-card">
                   <img
                     src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg"
-                    id="image-file"
+                    id=""
                     class="profile-img mb-2 mt-2"
                   />
                   <label for="file" class="text-white">
@@ -163,11 +172,27 @@
         </div>
       </div>
     </div>
+    <!-- main page section starts here  -->
+    <div class="" id="mainpage">
+      <div class="backimage-div">
+        <div class="text-center container">
+          <h3 class="text-white mb-4">
+            Beautiful, free images and photos that you can download and use for
+            any project.Better than any royalty free or stock photos.
+          </h3>
+        </div>
+        <div class="input-main">
+          <input
+            type="text"
+            id="search"
+            name="text"
+            placeholder="Search For Photos"
+          />
+          <button class="searchbt">Search</button>
+        </div>
+      </div>
+    </div>
 
-<div class="" id="mainpage">
- 
-</div>
-    
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
