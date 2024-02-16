@@ -40,3 +40,48 @@ function change() {
     });
   }
 }
+
+// signup form code
+
+const formFunc = document.getElementById("signupform");
+const emailText = document.getElementById("email");
+const passWord = document.getElementById("signup-pass");
+const userName = document.getElementById("username");
+const outName = document.getElementById("navbar-name");
+const outEmail = document.getElementById("outemail");
+const outPassword = document.getElementById("outpassword");
+
+formFunc.addEventListener("submit", function (x) {
+  x.preventDefault();
+
+  const storeEmail = emailText.value;
+  outEmail.textContent = storeEmail;
+});
+
+const logPage = document.getElementById("log-in-page");
+const formLog = document.getElementById("loginform");
+const logEmail = document.getElementById("login-email");
+const logPass = document.getElementById("login-pass");
+const mainPage = document.getElementById("mainpage");
+
+formLog.addEventListener("submit", function (l) {
+  l.preventDefault();
+
+  const storelog = logEmail.value;
+  const getEmail = emailText.value;
+  const storePass = logPass.value;
+  const getPass = passWord.value;
+
+  if (storelog === getEmail && storePass === getPass) {
+    setTimeout(openMain, 1000);
+  } else {
+    alert(
+      "Your Email and Password is wrong , Please SignUp If You Don't Have An Account"
+    );
+  }
+});
+
+function openMain() {
+  logPage.style.display = "none";
+  mainPage.style.display = "block";
+}

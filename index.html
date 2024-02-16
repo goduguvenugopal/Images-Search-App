@@ -20,17 +20,21 @@
   <body>
     <!-- navsection code  -->
     <div class="nav-card" id="demo">
-      <div class="container-fluid d-flex py-2">
+      <div class="container d-flex justify-content-between align-items-center py-2">
         <div class="logo-card">
           <img src="vk-logo.png" class="logo" />
+          <h5 class="text-dark mt-2 images">Images</h5>
         </div>
-        <h5 class="text-dark mt-2 images">Images</h5>
+        <div class="d-flex" id="">
+          <h5 class="text-dark mt-2 images ">Log Out</h5>
+          <h5 class="text-dark  " id="navbar-name">venu gopal</h5>
+        </div>
       </div>
     </div>
 
-    <!-- login section code  -->
+    <!-- login and signup section code  -->
 
-    <div class="bg-image-card">
+    <div class="bg-image-card" id="log-in-page">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-5">
@@ -45,11 +49,13 @@
             <h3 class="text-whit mb-3" id="loginbt">Login</h3>
 
             <h3 class="text-whit mb-3" id="signupbt">SignUp</h3>
-
+           <!-- login form code starts here  -->
             <div class="login-card bg-whit mt-2" id="logindiv">
-              <form action="index1.html" target="_self" class="">
+              
+              <form action="" id="loginform" target="_self" class="">
                 <label for="Email" class="email mb-1">Email</label><br />
                 <input
+                id="login-email"
                   type="email"
                   name="email"
                   required
@@ -62,6 +68,7 @@
                   type="password"
                   name="password"
                   required
+                  id="login-pass"
                   placeholder="Enter Your password"
                   minlength="6"
                   maxlength="6"
@@ -81,7 +88,7 @@
             </div>
             <!-- signup code goes here  -->
             <div class="signup-card mt-2" id="signupdiv">
-              <form action="" id="formid">
+              <form  id="signupform">
                 <div class="image-card">
                   <img
                     src="https://thumbs.dreamstime.com/b/unknown-male-avatar-profile-image-businessman-vector-unknown-male-avatar-profile-image-businessman-vector-profile-179373829.jpg"
@@ -123,7 +130,7 @@
                   type="email"
                   required
                   placeholder="Enter Your Email"
-                  name="text"
+                  name="email"
                   id="email"
                   class="signup-form mb-3"
                 /><br />
@@ -156,6 +163,11 @@
         </div>
       </div>
     </div>
+
+<div class="" id="mainpage">
+ 
+</div>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
