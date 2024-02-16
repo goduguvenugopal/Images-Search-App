@@ -101,6 +101,64 @@ const logoutFunc = document
   });
 function openlog() {
   logPage.style.display = "block";
-  mainPage.style.display = "block";
+  mainPage.style.display = "none";
   logoutDiv.style.display = "none";
 }
+
+// images API code
+
+const accessKey = "k49MRcGfcPvJ3zb1pznNYw97rO_hlCGcn0GPHZ-hUkM";
+
+const formsearch = document.getElementById("search-form");
+const inputSearch = document.getElementById("search");
+const searchResults = document.querySelector(".search-img-card");
+const showMore = document.getElementById("show-more-bt");
+
+let inputData = "";
+let page = 1;
+
+async function searchImages() {
+  inputData = inputSearch.value;
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+  const results = data.results;
+
+  if (page === 1) {
+    searchResults.innerHTML = "";
+  }
+
+  results.map((results) => {
+    const imagesDiv = document.createElement("div");
+    imagesDiv.classList.add("search-img-sub-card");
+    const imageTag = document.createElement("img");
+    imageTag.classList.add("search-img");
+    imageTag.src = results.urls.small;
+    imageTag.alt = results.alt_description;
+    const imageLink = document.createElement("a");
+    imageLink.classList.add("img-name");
+    imageLink.href = results.links.html;
+    imageLink.textContent = results.alt_description;
+
+    imagesDiv.appendChild(imageTag);
+    imagesDiv.appendChild(imageLink);
+    searchResults.appendChild(imagesDiv);
+  });
+
+  page++;
+
+  if (page > 1) {
+    showMore.style.display = "block";
+  }
+}
+
+formsearch.addEventListener("submit", (x) => {
+  x.preventDefault();
+  page = 1;
+  searchImages();
+});
+
+showMore.addEventListener("click", () => {
+  searchImages();
+});

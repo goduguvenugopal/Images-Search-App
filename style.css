@@ -199,21 +199,21 @@
 
 #log-out-bt {
   margin-right: 5px;
-  border: 1px solid rgb(202, 31, 185);
-  background-color: transparent;
-  height: 30px;
-  width: 80px;
-  border-radius: 20px;
-  font-size: 15px;
-  text-align: center;
-  padding-top: 5px;
+
+  font-size: 18px;
+
   color: rgb(35, 42, 250);
 }
 
+@media only screen and (min-width: 760px) {
+  #log-out-bt {
+    margin-right: 90px;
+  }
+}
+
 #log-out-bt:hover {
-  color: white;
-  background-color: rgb(195, 36, 227);
-  border: none;
+  color: rgb(220, 11, 189);
+  cursor: pointer;
 }
 
 #navbar-name {
@@ -266,7 +266,7 @@
     height: 40px;
     border: none;
     background-color: blue;
-    width: 80px;
+    width: 90px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
@@ -302,4 +302,75 @@
     color: white;
     font-weight: 500;
   }
+}
+
+.free-stock-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-img-card {
+  display: flex;
+
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.search-img-sub-card {
+  width: 355px;
+  border-radius: 10px;
+  height: 300px;
+  margin-top: 10px;
+  background-color: rgb(247, 243, 243);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgb(151, 149, 149);
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.search-img-sub-card:hover {
+  opacity: 0.8;
+}
+
+.search-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 355px;
+  height: 250px;
+}
+
+.img-name {
+  margin-left: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .search-img-sub-card {
+    width: 100%;
+
+    height: 300px;
+  }
+
+  .search-img-card {
+  }
+}
+
+#show-more-bt {
+  display: none;
+}
+
+.show-btn-card {
+  display: flex;
+  justify-content: center;
 }
