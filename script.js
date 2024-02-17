@@ -48,13 +48,16 @@ function change() {
 const formFunc = document.getElementById("signupform");
 
 const userName = document.getElementById("username");
-const outName = document.getElementById("navbar-name");
+const outName = document.querySelectorAll(".navbar-name");
 
 formFunc.addEventListener("submit", function (x) {
   x.preventDefault();
 
   const storeName = userName.value;
-  outName.textContent = `Hi,${storeName}`;
+  outName.forEach((x) => {
+    x.textContent = `Hi,${storeName}`;
+  });
+
   alert("Your Account Has Been Created , Now Login The Website ");
 });
 
@@ -94,11 +97,13 @@ function openMain() {
 
 // logout function
 
-const logoutFunc = document
-  .getElementById("log-out-bt")
-  .addEventListener("click", () => {
+const logoutFunc = document.querySelectorAll(".log-out-bt");
+Array.from(logoutFunc).forEach((x) => {
+  x.addEventListener("click", () => {
     setTimeout(openlog, 1000);
   });
+});
+
 function openlog() {
   logPage.style.display = "block";
   mainPage.style.display = "none";
@@ -161,4 +166,28 @@ formsearch.addEventListener("submit", (x) => {
 
 showMore.addEventListener("click", () => {
   searchImages();
+});
+
+// share API code
+function shareFunc() {
+  navigator.share({
+    text: "Hi This is Venu Check My Images Website ",
+    url: "https://goduguvenugopal.github.io/Images-Search-App/",
+  });
+}
+
+
+// checkbox code 
+
+const checkbox = document.getElementById("flexSwitchCheckDefault");
+const body = document.querySelector("body");
+
+checkbox.addEventListener("change", function() {
+  if (checkbox.checked) {
+    body.style.backgroundColor = "black";
+    body.style.color = "white"
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.color = "black"
+  }
 });
