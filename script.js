@@ -266,7 +266,7 @@ showMore.addEventListener("click", () => {
 // share API code
 function shareFunc() {
   navigator.share({
-    text: "Hi This is Venu Check My Images Website : ",
+    text: "Hi This is Venu Check My Images Website:",
     url: "https://vkimages.netlify.app/",
   });
 }
