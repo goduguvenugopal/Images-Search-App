@@ -63,6 +63,8 @@ formFunc.addEventListener("submit", function (event) {
     "userData",
     JSON.stringify({ name: storeName, email: storeEmail, password: storePass })
   );
+  
+  
   const userData = JSON.parse(localStorage.getItem("userData"));
   outName.forEach((element) => {
     element.textContent = `Hi, ${userData.name}`;
