@@ -44,40 +44,47 @@ function change() {
 }
 
 // Signup form code
-const formFunc = document.getElementById("signupform");
+document.addEventListener("DOMContentLoaded", function () {
+  const formFunc = document.getElementById("signupform");
 
-const userName = document.getElementById("username");
-const userEmail = document.getElementById("email");
-const userPass = document.getElementById("signup-pass");
-const outName = document.querySelectorAll(".navbar-name");
+  const userName = document.getElementById("username");
+  const userEmail = document.getElementById("email");
+  const userPass = document.getElementById("signup-pass");
+  const outName = document.querySelectorAll(".navbar-name");
 
-formFunc.addEventListener("submit", function (event) {
-  event.preventDefault();
+  formFunc.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const storeName = userName.value;
-  const storeEmail = userEmail.value;
-  const storePass = userPass.value;
+    const storeName = userName.value;
+    const storeEmail = userEmail.value;
+    const storePass = userPass.value;
 
-  // Save user data to localStorage
-  localStorage.setItem(
-    "userData",
-    JSON.stringify({ name: storeName, email: storeEmail, password: storePass })
-  );
-  
-  
-  const userData = JSON.parse(localStorage.getItem("userData"));
-  outName.forEach((element) => {
-    element.textContent = `Hi, ${userData.name}`;
+    // Save user data to localStorage
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        Name: storeName,
+        email: storeEmail,
+        password: storePass,
+      })
+    );
+
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    outName.forEach((element) => {
+      element.textContent = `Hi, ${userData.Name}`;
+    });
+    console.log(
+      "userData stored in localStorage:",
+      localStorage.getItem("userData")
+    );
+    alert("Your Account Has Been Created , Now Login The Website ");
+
+    // Clear signup form
+    userName.value = "";
+    userEmail.value = "";
+    userPass.value = "";
   });
-
-  alert("Your Account Has Been Created , Now Login The Website ");
-
-  // Clear signup form
-  userName.value = "";
-  userEmail.value = "";
-  userPass.value = "";
 });
-
 // Login code
 const logPage = document.getElementById("log-in-page");
 const formLog = document.getElementById("loginform");
@@ -136,7 +143,7 @@ function openMain() {
   mainPage.style.display = "block";
   logoutDiv.style.display = "block";
 }
- 
+
 // images API code
 
 const accessKey = "k49MRcGfcPvJ3zb1pznNYw97rO_hlCGcn0GPHZ-hUkM";
@@ -199,7 +206,7 @@ showMore.addEventListener("click", () => {
 function shareFunc() {
   navigator.share({
     text: "Hi This is Venu Check My Images Website:",
-    title:"Hii This Is Venu Check My Website",
+    title: "Hii This Is Venu Check My Website",
     url: "https://vkimages.netlify.app/",
   });
 }
