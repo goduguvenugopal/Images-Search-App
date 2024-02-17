@@ -240,6 +240,10 @@
   align-items: center;
 }
 
+.searchbt:hover{
+  background-color: rgb(230, 85, 23);
+}
+
 @media only screen and (max-width: 760px) {
   .backimage-div {
     height: 50vh;
@@ -423,6 +427,11 @@
   width: 25px;
 }
 
+.face-icon-2:hover {
+  color: blue;
+}
+
+
 .face-icon:hover {
   color: blue;
 }
@@ -445,6 +454,13 @@
   padding: 10px;
   border-radius: 20px;
   align-items: center;
+  cursor: pointer;
+}
+
+#flexSwitchCheckDefault{
+  font-size: 20px;
+  cursor: pointer;
+  
 }
 
 .share-text {
