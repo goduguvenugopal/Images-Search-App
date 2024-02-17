@@ -43,50 +43,90 @@ function change() {
   }
 }
 
-// signup form code
-
+// Signup form code
 const formFunc = document.getElementById("signupform");
 
 const userName = document.getElementById("username");
+const userEmail = document.getElementById("email");
+const userPass = document.getElementById("signup-pass");
 const outName = document.querySelectorAll(".navbar-name");
 
-formFunc.addEventListener("submit", function (x) {
-  x.preventDefault();
+formFunc.addEventListener("submit", function (event) {
+  event.preventDefault();
 
   const storeName = userName.value;
-  outName.forEach((x) => {
-    x.textContent = `Hi,${storeName}`;
+  const storeEmail = userEmail.value;
+  const storePass = userPass.value;
+
+  // Save user data to localStorage
+  localStorage.setItem(
+    "userData",
+    JSON.stringify({ name: storeName, email: storeEmail, password: storePass })
+  );
+
+  outName.forEach((element) => {
+    element.textContent = `Hi, ${storeName}`;
   });
 
   alert("Your Account Has Been Created , Now Login The Website ");
+
+  // Clear signup form
+  userName.value = "";
+  userEmail.value = "";
+  userPass.value = "";
 });
 
-// login code
-
-const emailText = document.getElementById("email");
-const passWord = document.getElementById("signup-pass");
+// Login code
 const logPage = document.getElementById("log-in-page");
 const formLog = document.getElementById("loginform");
 const logEmail = document.getElementById("login-email");
 const logPass = document.getElementById("login-pass");
 const mainPage = document.getElementById("mainpage");
+
 const logoutDiv = document.getElementById("log-pro-cont");
 
-formLog.addEventListener("submit", function (l) {
-  l.preventDefault();
+formLog.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-  const storelog = logEmail.value;
-  const getEmail = emailText.value;
-  const storePass = logPass.value;
-  const getPass = passWord.value;
+  const enteredEmail = logEmail.value;
+  const enteredPass = logPass.value;
 
-  if (storelog === getEmail && storePass === getPass) {
-    setTimeout(openMain, 1000);
+  // Retrieve user data from localStorage
+  const userData = JSON.parse(localStorage.getItem("userData"));
+
+  if (
+    userData &&
+    userData.email === enteredEmail &&
+    userData.password === enteredPass
+  ) {
+    // Set login state to true in localStorage
+    localStorage.setItem("isLoggedIn", "true");
+    openMain();
   } else {
     alert(
-      "Your Email and Password is wrong , Please SignUp If You Don't Have An Account"
+      "Your Email and Password are wrong. Please sign up if you don't have an account."
     );
   }
+});
+
+// Check if the user is already logged in
+window.onload = function () {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true") {
+    openMain();
+  }
+};
+
+// Logout function
+const logoutButton = document.querySelectorAll(".log-out-bt");
+Array.from(logoutButton).forEach((x) => {
+  x.addEventListener("click", () => {
+    localStorage.removeItem("isLoggedIn");
+    logPage.style.display = "block"; // Show login page again
+    mainPage.style.display = "none"; // Hide main page
+    logoutDiv.style.display = "none"; // Hide logout div
+  });
 });
 
 function openMain() {
@@ -95,20 +135,75 @@ function openMain() {
   logoutDiv.style.display = "block";
 }
 
-// logout function
+// signup form code
 
-const logoutFunc = document.querySelectorAll(".log-out-bt");
-Array.from(logoutFunc).forEach((x) => {
-  x.addEventListener("click", () => {
-    setTimeout(openlog, 1000);
-  });
-});
+// const formFunc = document.getElementById("signupform");
 
-function openlog() {
-  logPage.style.display = "block";
-  mainPage.style.display = "none";
-  logoutDiv.style.display = "none";
-}
+// const userName = document.getElementById("username");
+// const outName = document.querySelectorAll(".navbar-name");
+
+// formFunc.addEventListener("submit", function (x) {
+//   x.preventDefault();
+
+//   const storeName = userName.value;
+//   outName.forEach((x) => {
+//     x.textContent = `Hi,${storeName}`;
+//   });
+
+//   alert("Your Account Has Been Created , Now Login The Website ");
+// });
+
+// // login code
+
+// const emailText = document.getElementById("email");
+// const passWord = document.getElementById("signup-pass");
+// const logPage = document.getElementById("log-in-page");
+// const formLog = document.getElementById("loginform");
+// const logEmail = document.getElementById("login-email");
+// const logPass = document.getElementById("login-pass");
+// const mainPage = document.getElementById("mainpage");
+// const logoutDiv = document.getElementById("log-pro-cont");
+
+// formLog.addEventListener("submit", function (l) {
+//   l.preventDefault();
+
+//   const storelog = logEmail.value;
+//   const getEmail = emailText.value;
+//   const storePass = logPass.value;
+//   const getPass = passWord.value;
+
+//   if (storelog === getEmail && storePass === getPass) {
+//     setTimeout(openMain, 1000);
+//   } else {
+//     alert(
+//       "Your Email and Password is wrong , Please SignUp If You Don't Have An Account"
+//     );
+//   }
+// });
+
+// function openMain() {
+//   logPage.style.display = "none";
+//   mainPage.style.display = "block";
+//   logoutDiv.style.display = "block";
+// }
+
+// // logout function
+
+// const logoutButton = document.querySelectorAll(".log-out-bt");
+// Array.from(logoutFunc).forEach((x) => {
+//   x.addEventListener("click", () => {
+//     localStorage.removeItem("isLoggedIn");
+//     logPage.style.display = "block"; // Show login page again
+//     mainPage.style.display = "none"; // Hide main page
+//     logoutDiv.style.display = "none"; // Hide logout div
+//   });
+// });
+
+// function openlog() {
+//   logPage.style.display = "block";
+//   mainPage.style.display = "none";
+//   logoutDiv.style.display = "none";
+// }
 
 // images API code
 
@@ -176,18 +271,17 @@ function shareFunc() {
   });
 }
 
-
-// checkbox code 
+// checkbox code
 
 const checkbox = document.getElementById("flexSwitchCheckDefault");
 const body = document.querySelector("body");
 
-checkbox.addEventListener("change", function() {
+checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
     body.style.backgroundColor = "black";
-    body.style.color = "white"
+    body.style.color = "white";
   } else {
     body.style.backgroundColor = "white";
-    body.style.color = "black"
+    body.style.color = "black";
   }
 });
