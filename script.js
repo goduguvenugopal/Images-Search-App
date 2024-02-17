@@ -65,7 +65,7 @@ formFunc.addEventListener("submit", function (event) {
   );
   const userData = JSON.parse(localStorage.getItem("userData"));
   outName.forEach((element) => {
-    element.textContent = `Hi, ${userData}${storeName}`;
+    element.textContent = `Hi, ${userData.name}`;
   });
 
   alert("Your Account Has Been Created , Now Login The Website ");
