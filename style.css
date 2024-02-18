@@ -261,7 +261,7 @@
   }
 
   #search {
-    width: 250px;
+    width: 200px;
     height: 30px;
     border: none;
     text-transform: capitalize;
@@ -271,7 +271,7 @@
     height: 40px;
     border: none;
     background-color: blue;
-    width: 90px;
+    width: 80px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
@@ -295,6 +295,7 @@
     width: 250px;
     height: 30px;
     border: none;
+    text-transform: capitalize;
   }
 
   .searchbt {
