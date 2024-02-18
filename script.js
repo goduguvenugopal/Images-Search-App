@@ -21,15 +21,15 @@ signupBt.addEventListener("click", () => {
 // photo preview code
 
 // Function to save file to local storage
-function saveFileToLocalStorage(file) {
-  localStorage.setItem("uploadedFile", JSON.stringify(file));
-}
+// function saveFileToLocalStorage(file) {
+//   localStorage.setItem("uploadedFile", JSON.stringify(file));
+// }
 
 // Function to load file from local storage
-function loadFileFromLocalStorage() {
-  const storedFile = localStorage.getItem("uploadedFile");
-  return storedFile ? JSON.parse(storedFile) : null;
-}
+// function loadFileFromLocalStorage() {
+//   const storedFile = localStorage.getItem("uploadedFile");
+//   return storedFile ? JSON.parse(storedFile) : null;
+// }
 
 function change() {
   const fileInput = document.getElementById("file");
@@ -46,7 +46,7 @@ function change() {
     };
 
     // Save selected file to local storage
-    saveFileToLocalStorage(selectedFile);
+    // saveFileToLocalStorage(selectedFile);
 
     reader.readAsDataURL(selectedFile);
     previewImgs.forEach((element) => {
@@ -60,17 +60,17 @@ function change() {
 }
 
 // Load previously uploaded file from local storage
-window.addEventListener("DOMContentLoaded", () => {
-  const fileFromStorage = loadFileFromLocalStorage();
-  if (fileFromStorage) {
-    // Display the uploaded file
-    const previewImgs = document.querySelectorAll(".profile-img");
-    previewImgs.forEach((element) => {
-      element.src = URL.createObjectURL(fileFromStorage);
-      element.style.display = "block";
-    });
-  }
-});
+// window.addEventListener("DOMContentLoaded", () => {
+//   const fileFromStorage = loadFileFromLocalStorage();
+//   if (fileFromStorage) {
+//     // Display the uploaded file
+//     const previewImgs = document.querySelectorAll(".profile-img");
+//     previewImgs.forEach((element) => {
+//       element.src = URL.createObjectURL(fileFromStorage);
+//       element.style.display = "block";
+//     });
+//   }
+// });
 
 // Signup form code
 document.addEventListener("DOMContentLoaded", function () {
