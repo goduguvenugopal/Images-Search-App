@@ -20,17 +20,6 @@ signupBt.addEventListener("click", () => {
 
 // photo preview code
 
-// Function to save file to local storage
-// function saveFileToLocalStorage(file) {
-//   localStorage.setItem("uploadedFile", JSON.stringify(file));
-// }
-
-// Function to load file from local storage
-// function loadFileFromLocalStorage() {
-//   const storedFile = localStorage.getItem("uploadedFile");
-//   return storedFile ? JSON.parse(storedFile) : null;
-// }
-
 function change() {
   const fileInput = document.getElementById("file");
   const previewImgs = document.querySelectorAll(".profile-img");
@@ -42,11 +31,10 @@ function change() {
     reader.onload = function (event) {
       previewImgs.forEach((element) => {
         element.src = event.target.result;
+        const image = event.target.result;
+        localStorage.setItem("storedImage", image);
       });
     };
-
-    // Save selected file to local storage
-    // saveFileToLocalStorage(selectedFile);
 
     reader.readAsDataURL(selectedFile);
     previewImgs.forEach((element) => {
@@ -59,61 +47,61 @@ function change() {
   }
 }
 
-// Load previously uploaded file from local storage
-// window.addEventListener("DOMContentLoaded", () => {
-//   const fileFromStorage = loadFileFromLocalStorage();
-//   if (fileFromStorage) {
-//     // Display the uploaded file
-//     const previewImgs = document.querySelectorAll(".profile-img");
-//     previewImgs.forEach((element) => {
-//       element.src = URL.createObjectURL(fileFromStorage);
-//       element.style.display = "block";
-//     });
-//   }
-// });
-
-// Signup form code
-document.addEventListener("DOMContentLoaded", function () {
-  const formFunc = document.getElementById("signupform");
-
-  const userName = document.getElementById("username");
-  const userEmail = document.getElementById("email");
-  const userPass = document.getElementById("signup-pass");
-  const outName = document.querySelectorAll(".navbar-name");
-
-  formFunc.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const storeName = userName.value;
-    const storeEmail = userEmail.value;
-    const storePass = userPass.value;
-
-    // Save user data to localStorage
-    localStorage.setItem(
-      "userData",
-      JSON.stringify({
-        Name: storeName,
-        email: storeEmail,
-        password: storePass,
-      })
-    );
-
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    outName.forEach((element) => {
-      element.textContent = `Hi, ${userData.Name}`;
+function displayStoredImage() {
+  const image = localStorage.getItem("storedImage");
+  if (image) {
+    const previewImgs = document.querySelectorAll(".profile-img");
+    previewImgs.forEach((element) => {
+      element.src = image;
     });
-    console.log(
-      "userData stored in localStorage:",
-      localStorage.getItem("userData")
-    );
-    alert("Your Account Has Been Created , Now Login The Website ");
 
-    // Clear signup form
-    userName.value = "";
-    userEmail.value = "";
-    userPass.value = "";
+    console.log("Image retrieved from local storage and displayed.");
+  } else {
+    console.log("No image found in local storage.");
+  }
+}
+// Signup form code
+
+const formFunc = document.getElementById("signupform");
+
+const userName = document.getElementById("username");
+const userEmail = document.getElementById("email");
+const userPass = document.getElementById("signup-pass");
+const outName = document.querySelectorAll(".navbar-name");
+
+formFunc.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const storeName = userName.value;
+  const storeEmail = userEmail.value;
+  const storePass = userPass.value;
+
+  // Save user data to localStorage
+
+  localStorage.setItem(
+    "userData",
+    JSON.stringify({
+      Name: storeName,
+      email: storeEmail,
+      password: storePass,
+    })
+  );
+  outName.forEach((element) => {
+    element.textContent = `Hi, ${storeName}`;
   });
+
+  console.log(
+    "userData stored in localStorage:",
+    localStorage.getItem("userData")
+  );
+  alert("Your Account Has Been Created , Now Login The Website ");
+
+  // Clear signup form
+  userName.value = "";
+  userEmail.value = "";
+  userPass.value = "";
 });
+
 // Login code
 const logPage = document.getElementById("log-in-page");
 const formLog = document.getElementById("loginform");
@@ -153,6 +141,13 @@ window.onload = function () {
 
   if (isLoggedIn === "true") {
     openMain();
+    displayStoredImage();
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    const outNames = document.querySelectorAll(".navbar-name");
+
+    outNames.forEach((element) => {
+      element.textContent = "Hi," + userData.Name;
+    });
   }
 };
 
