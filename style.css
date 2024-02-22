@@ -356,6 +356,22 @@
   text-transform: capitalize;
 }
 
+@media only screen and (min-width: 500px) and (max-width: 1200px) {
+  .search-img {
+    width: 335px;
+    height: 250px;
+  }
+
+  .search-img-sub-card {
+    width: 335px;
+    height: 300px;
+  }
+  .logo-card {
+    margin-left: 40px;
+  }
+  
+}
+
 @media only screen and (max-width: 768px) {
   .search-img {
     width: 100%;

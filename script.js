@@ -242,6 +242,7 @@ const body = document.querySelector("body");
 
 checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
+    
     body.style.backgroundColor = "black";
     body.style.color = "white";
   } else {
