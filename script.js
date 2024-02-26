@@ -252,7 +252,7 @@ function speakFunc() {
   micDiv.style.display = "flex";
    setTimeout(() => {
   document.getElementById("backmic").style.display = "block"
-   },  2000);
+   },  6000);
   
 }
 
