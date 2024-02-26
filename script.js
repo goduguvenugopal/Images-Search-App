@@ -234,7 +234,7 @@ function speakFunction() {
   var listen = new webkitSpeechRecognition();
 
   listen.interimResults = true;
-
+  listen.continuous = true
   listen.lang = "en-US";
   listen.start();
 
