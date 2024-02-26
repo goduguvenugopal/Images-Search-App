@@ -265,8 +265,8 @@
     height: 30px;
     border: none;
     text-transform: capitalize;
-     outline-color: red;
-     background-color: red;
+     
+    
     
 
   }
@@ -281,7 +281,7 @@
     height: 40px;
     border: none;
     background-color: blue;
-    width: 70px;
+    width: 75px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
@@ -347,7 +347,7 @@
 
 #backmic{
   position: absolute;
-  bottom:40px;
+  bottom:70px;
 
 }
 
