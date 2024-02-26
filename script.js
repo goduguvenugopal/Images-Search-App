@@ -257,6 +257,7 @@ function speakFunc() {
 }
 
 function closeDiv() {
+  document.getElementById("backmic").style.display = "none"
   const micDiv = document.getElementById("micdiv");
   micDiv.style.display = "none";
 
