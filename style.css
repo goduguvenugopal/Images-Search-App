@@ -265,6 +265,15 @@
     height: 30px;
     border: none;
     text-transform: capitalize;
+     outline-color: red;
+    
+
+  }
+
+  #mic{
+    font-size: 22px;
+    margin-right: 7px;
+    cursor: pointer;
   }
 
   .searchbt {
@@ -296,6 +305,7 @@
     height: 30px;
     border: none;
     text-transform: capitalize;
+ 
   }
 
   .searchbt {
@@ -308,6 +318,36 @@
     color: white;
     font-weight: 500;
   }
+}
+#mic{
+  
+  cursor: pointer;
+}
+#mic:hover{
+  color: red;
+}
+ 
+.mic-cont{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  display:none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  text-transform: capitalize;
+  font-weight: 500;
+
+}
+
+#backmic{
+  position: absolute;
+  bottom:12px;
+
 }
 
 .free-stock-card {

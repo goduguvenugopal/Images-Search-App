@@ -226,6 +226,41 @@ showMore.addEventListener("click", () => {
   searchImages();
 });
 
+// speakfunction starts here
+
+function speakFunction() {
+  speakFunc();
+ 
+  var listen = new webkitSpeechRecognition();
+
+  listen.interimResults = true;
+
+  listen.lang = "en-US";
+  listen.start();
+
+  listen.onresult = (a) => {
+    var speechText = a.results[0][0].transcript;
+    document.getElementById("search").value = speechText;
+    const micHead = document.getElementById("michead");
+    micHead.textContent = speechText;
+    setTimeout(closeDiv, 1000);
+  };
+}
+
+function speakFunc() {
+  const micDiv = document.getElementById("micdiv");
+  micDiv.style.display = "block";
+  micDiv.style.display = "flex";
+}
+
+function closeDiv() {
+  const micDiv = document.getElementById("micdiv");
+  micDiv.style.display = "none";
+
+  page = 1;
+  searchImages();
+}
+
 // share API code
 function shareFunc() {
   navigator.share({
@@ -242,7 +277,6 @@ const body = document.querySelector("body");
 
 checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
-    
     body.style.backgroundColor = "black";
     body.style.color = "white";
   } else {
