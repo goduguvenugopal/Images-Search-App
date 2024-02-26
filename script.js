@@ -243,21 +243,31 @@ function speakFunction() {
     const micHead = document.getElementById("michead");
     micHead.textContent = speechText;
     setTimeout(closeDiv, 1000);
+    
+    tryFunc()
+    
+     
   };
 }
+
+ function tryFunc(){
+  document.getElementById("backmic").style.display = "none";
+  
+ }
+ 
+  
 
 function speakFunc() {
   const micDiv = document.getElementById("micdiv");
   micDiv.style.display = "block";
   micDiv.style.display = "flex";
-   setTimeout(() => {
-  document.getElementById("backmic").style.display = "block"
-   },  6000);
-  
+  setTimeout(() => {
+    document.getElementById("backmic").style.display = "block";
+  }, 6000);
 }
 
 function closeDiv() {
-  document.getElementById("backmic").style.display = "none"
+  document.getElementById("backmic").style.display = "none";
   const micDiv = document.getElementById("micdiv");
   micDiv.style.display = "none";
 
