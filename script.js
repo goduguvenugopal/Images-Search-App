@@ -250,6 +250,10 @@ function speakFunc() {
   const micDiv = document.getElementById("micdiv");
   micDiv.style.display = "block";
   micDiv.style.display = "flex";
+   setTimeout(() => {
+  document.getElementById("backmic").style.display = "block"
+   },  2000);
+  
 }
 
 function closeDiv() {

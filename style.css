@@ -262,7 +262,7 @@
 
 #closemicbtn{
   position: absolute;
-  right: 35px;
+  right: 30px;
   top: 80px;
   font-size: 23px;
   cursor: pointer;
@@ -345,6 +345,12 @@
     font-weight: 500;
   }
 }
+
+#backmic{
+  display: none;
+
+}
+
 #mic{
   
   cursor: pointer;

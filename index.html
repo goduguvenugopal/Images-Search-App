@@ -267,7 +267,7 @@
         </form>
       </div>
       <div class="mic-cont" id="micdiv">
-        <button type="button" class="btn-close" aria-label="Close" id="closemicbtn"></button>
+        <button type="button" class="btn-close" aria-label="Close" id="closemicbtn" onclick="closeDiv()" ></button>
         Listening...
         <div class="d-flex pt-2">
         <div class="spinner-grow text-primary" role="status">
@@ -297,7 +297,7 @@
       </div>
        <h3 class="mt-3" id="michead"></h3>
        
-        <button id="backmic" onclick="closeDiv()" class="btn btn-primary">Back</button>
+        <button id="backmic"  class="btn btn-primary" onclick="speakFunction()">Try Again</button>
     
        
       </div>
