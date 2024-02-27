@@ -229,7 +229,11 @@ showMore.addEventListener("click", () => {
 // speakfunction starts here
 
 function speakFunction() {
+  document.getElementById("speaknow").style.display = "block";
+  document.getElementById("listening").style.display = "none";
+  document.getElementById("mic-card-hide").style.display = "block"
   speakFunc();
+  tryFunc()
 
   var listen = new webkitSpeechRecognition();
 
@@ -244,7 +248,7 @@ function speakFunction() {
     micHead.textContent = speechText;
     setTimeout(closeDiv, 1000);
     
-    tryFunc()
+    
     
      
   };
@@ -262,7 +266,12 @@ function speakFunc() {
   micDiv.style.display = "block";
   micDiv.style.display = "flex";
   setTimeout(() => {
+    document.getElementById("listening").style.display = "block";
+    document.getElementById("speaknow").style.display = "none";
+  },  1500);
+  setTimeout(() => {
     document.getElementById("backmic").style.display = "block";
+    document.getElementById("mic-card-hide").style.display = "none"
   }, 6000);
 }
 

@@ -276,16 +276,13 @@
      
     }
 
-    #backmic{
-      position: absolute;
-      bottom:70px;
     
-    }
 
   #mic{
     font-size: 23px;
     margin-right: 7px;
     cursor: pointer;
+    color: black;
   }
 
   .searchbt {
@@ -312,11 +309,7 @@
     align-items: center;
   }
   
-  #backmic{
-    position: absolute;
-    bottom:30px;
   
-  }
 
   #closemicbtn{
     position: absolute;
@@ -346,13 +339,22 @@
   }
 }
 
+.tryagain{
+  display: inline-block;
+}
+
+ 
+
+#mic-card-hide{
+  display: none;
+}
 #backmic{
   display: none;
 
 }
 
 #mic{
-  
+  color: black;
   cursor: pointer;
 }
 #mic:hover{
